@@ -18,9 +18,9 @@ setup(
     install_requires=[],
     keywords="guerrilla mail",
     classifiers=[
-        "Development Status :: 2 - BETA",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python 3"
+        "Programming Language :: Python :: 3.10"
     ]
 )
