@@ -61,7 +61,7 @@ class GuerrillaMail:
         self.session.verify = False
         self.endpoint = endpoint
         if ip is None:
-            ip = requests.get("https://httpbin.org/ip").json()._get("origin")
+            ip = requests.get("https://httpbin.org/ip").json().get("origin")
         self.params = dict(ip=ip, agent="PyGuerrillaMailer")
         self._email_address = None
 
@@ -116,7 +116,7 @@ class GuerrillaMail:
         """
         resp = self._get("check_email", seq=seq)
         jsn = resp.json()
-        ret = [Email(**o) for o in jsn._get("list")]
+        ret = [Email(**o) for o in jsn.get("list")]
         return ret
 
     def get_email_list(self, offset=0) -> list[Email]:
